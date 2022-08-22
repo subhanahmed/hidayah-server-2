@@ -6,7 +6,7 @@ const {
 } = require('../controllers/superAdminController');
 const protect = require('../middleware/authMiddleware.js')
 
-router.route('/students').get(protect, students)
-router.route('/faculties').get(protect, faculties)
+router.route('/students').get(students)
+router.route('/faculties').get(faculties)
 
 module.exports = router
