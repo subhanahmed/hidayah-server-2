@@ -2,11 +2,28 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const userSchema = mongoose.Schema(
     {
+        firstName:{
+            type: 'string',
+            default: ''
+        },
+        lastName:{
+            type: 'string',
+            default: ''
+        },
         name: {
             type: 'string',
             required: true
         },
+        husband_fatherName: {
+            type: 'string',
+            default: ''
+        },
         email: {
+            type: 'string',
+            required: true,
+            unique: true
+        },
+        cnic_passport: {
             type: 'string',
             required: true,
             unique: true
@@ -14,6 +31,46 @@ const userSchema = mongoose.Schema(
         password: {
             type: 'string',
             required: true
+        },
+        phone: {
+            type: 'string',
+            default: ''
+        },
+        role: {
+            type: 'string',
+            default: ''
+        },
+        isStudent: {
+            type: Boolean,
+            default: false
+        },
+        isTeacher: {
+            type: Boolean,
+            default: false
+        },
+        isNazim: {
+            type: Boolean,
+            default: false
+        },
+        isAccountant: {
+            type: Boolean,
+            default: false
+        },
+        isSuperAdmin: {
+            type: Boolean,
+            default: false
+        },
+        shift: {
+            type: 'string',
+            default: ''
+        },
+        classs:{
+            type: 'string',
+            default: ''
+        },
+        perHourRate: {
+            type: 'number',
+            default: 0
         },
         avatar: {
             type: 'string',
