@@ -8,6 +8,7 @@ require('dotenv').config();
 const userRoutes = require('./routes/userRoutes.js');
 const newsRoutes = require('./routes/newsRoute.js');
 const categoryRoutes = require('./routes/categoryRoute');
+const superAdminRoutes = require('./routes/superAdminRoutes.js')
 
 
 const morgan = require('morgan');
@@ -38,6 +39,7 @@ app.use(express.urlencoded({extended: false}));
 app.use('/api/users', userRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/category', categoryRoutes);
+app.use('/api/superAdmin', superAdminRoutes)
 
 app.get('*', function(req, res){
   res.status(404).json({
