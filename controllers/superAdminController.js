@@ -13,7 +13,7 @@ const students = asyncHandler(async (req, res) => {
 // @route   GET /api/superAdmin/faculties
 // @access  Private/SuperAdmin
 const faculties = asyncHandler(async (req, res) => {
-  const users = await User.find({ 'isTeacher': true })
+  const users = await User.find({ 'isStudent': false })
   res.json(users)
 })
 
