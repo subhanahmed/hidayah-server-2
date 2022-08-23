@@ -33,9 +33,24 @@ const facultiesCount = asyncHandler(async (req, res) => {
   res.json(users)
 })
 
+// @desc    Get student by ID
+// @route   GET /api/superAdmin/student/:id
+// @access  Private/SuperAdmin
+const getStudentById = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id).select('-password')
+
+  if (user) {
+    res.json(user)
+  } else {
+    res.status(404)
+    throw new Error('User not found')
+  }
+})
+
 module.exports = {
   students,
   faculties,
   studentsCount,
-  facultiesCount
+  facultiesCount,
+  getStudentById
 } 
