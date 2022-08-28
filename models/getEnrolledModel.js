@@ -43,7 +43,7 @@ const enquriesSchema = mongoose.Schema(
             unique: true
         },
         nationality:{
-            tpye:'string',
+            type:'string',
             default:''
         },
         address:{
