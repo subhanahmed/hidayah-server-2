@@ -85,6 +85,10 @@ const enquriesSchema = mongoose.Schema(
         programId: {
             type: 'string',
             default: ''
+        },
+        submissionDate: {
+            type: 'string',
+            default: ''
         }
     }
 )
