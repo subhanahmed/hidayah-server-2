@@ -9,6 +9,7 @@ const userRoutes = require('./routes/userRoutes.js');
 const newsRoutes = require('./routes/newsRoute.js');
 const categoryRoutes = require('./routes/categoryRoute');
 const superAdminRoutes = require('./routes/superAdminRoutes.js')
+const getEnrolledRoutes = require('./routes/getEnrolledRoute')
 
 
 const morgan = require('morgan');
@@ -40,6 +41,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/category', categoryRoutes);
 app.use('/api/superAdmin', superAdminRoutes)
+app.use('/api/enrollment', getEnrolledRoutes)
 
 app.get('*', function(req, res){
   res.status(404).json({
