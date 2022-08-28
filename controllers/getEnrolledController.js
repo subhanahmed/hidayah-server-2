@@ -91,7 +91,8 @@ const getEnrolledStudent = asyncHandler(async (req, res, next) => {
         previousIslamicEducation,
         howDidYouHearAboutThisAcademy,
         role,
-        programId
+        programId,
+        submissionDate
          } = req.body
     //console.log(req.body)
 
@@ -124,7 +125,8 @@ const getEnrolledStudent = asyncHandler(async (req, res, next) => {
         previousIslamicEducation,
         howDidYouHearAboutThisAcademy,
         role,
-        programId
+        programId,
+        submissionDate
     });
     //console.log(enquire)
     enquire.save(function (err, enquire) {
