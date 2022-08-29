@@ -11,6 +11,7 @@ const categoryRoutes = require('./routes/categoryRoute');
 const superAdminRoutes = require('./routes/superAdminRoutes.js')
 const getEnrolledRoutes = require('./routes/getEnrolledRoute')
 const programRoutes=require('./routes/programRoute')
+const studentRoutes = require('./routes/studentRoute')
 
 const morgan = require('morgan');
 
@@ -43,6 +44,7 @@ app.use('/api/category', categoryRoutes);
 app.use('/api/superAdmin', superAdminRoutes)
 app.use('/api/enrollment', getEnrolledRoutes)
 app.use('/api/program',programRoutes)
+app.use('/api/student',studentRoutes)
 
 app.get('*', function(req, res){
   res.status(404).json({
