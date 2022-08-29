@@ -24,6 +24,7 @@ const authUser = asyncHandler(async (req, res) => {
       isTeacher: user.isTeacher,
       isAccountant: user.isAccountant,
       isNazim: user.isNazim,
+      rollNumber: user.rollNumber,
       avatar: user.avatar,
       token: generateToken(user._id),
       favorites: user.favorites,
